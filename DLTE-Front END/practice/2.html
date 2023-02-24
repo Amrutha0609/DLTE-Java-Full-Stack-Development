@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loan detail</title>
+</head>
+<body>
+    <h1>loan details</h1>
+    <script>
+        let ACCOUNT_NUMBER,TYPE_LOAN,DATE_OF_LOAN_ISSUE,Loan_AMOUNT,INTREST;
+        window.onload=function(){
+            ACCOUNT_NUMBER=prompt("enter your account number","");
+            TYPE_LOAN=prompt("enter type of loan","");
+            DATE_OF_LOAN_ISSUE=prompt("enter the date in which loan was issuesd","");
+            INTREST=prompt("ENTER THE INTREST RATE","");
+            var view=document.getElementById("show");
+            view.innerHTML="the account no of the customer is"+ACCOUNT_NUMBER+"TYPE OF LOAN TAKEN WAS"+TYPE_LOAN+"THE DATE ON WHICH THE PERSON NEEDS LOAN"+DATE_OF_LOAN_ISSUE+"INTREST OF AMOUNT"+INTREST;
+            alert(view.innerHTML);
+        }
+        
+    </script>
+    
+
+
+    <P id="show">RESULT</P>
+    
+</body>
+</html>

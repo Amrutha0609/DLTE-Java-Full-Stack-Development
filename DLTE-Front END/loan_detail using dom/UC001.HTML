@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Detail</title>
+    
+</head>
+<body>
+   <script>
+        let loan_id,loan_type,loan_issued_date,loan_amount;
+           window.onload=function(){
+            loan_id=prompt("Enter your ACCOUNT_NUMBER","");
+            loan_type=prompt("Enter your Loan_type","");
+            loan_issued_date=prompt("Enter the DATE in which loan issued","");
+            loan_amount=prompt("enter your Loan_AMOUNT"," ");
+
+            var view=document.getElementById("show")
+            view.innerhtml="the loadid of a customer is"+loan_id,loan_type,loan_issued_date,loan_amount;
+        }
+   </script> 
+   <h1>LOAN_DETAILS</h1>
+   
+   <p id="show">Result Will be shown here!!!</p>
+   
+</body>
+</html>

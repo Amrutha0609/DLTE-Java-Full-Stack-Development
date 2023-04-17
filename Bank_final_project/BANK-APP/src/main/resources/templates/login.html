@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+</head>
+
+<body>
+<header>
+    <div class="col-12 p-3 me-2 ms-1">
+        <div class="text-primary h-100">
+            <marque direction="left" class="h-50 bg-dark">
+                <p> online banking is a safe way to conduct netbanking from the comfort of your own home or office, at any time and from any place</p>
+            </marque>
+        </div>
+    </div>
+    <h1>Welcome to Aaradhya Bank</h1>
+    <img src="/image/aaradhya logo.jpg" height="100px" weidth="50px">
+</header>
+<form>
+    <label for="username">UserName</label>
+    <input type="text" id="username" name="username">
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password">
+    <button type="button" id="mybtn">Login</button>
+</form>
+<style>
+    body {
+        background-image: url('/image/background.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    header {
+        text-align: center;
+        padding: 20px;
+    }
+
+    form {
+        max-width: 500px;
+        background-color: lavender;
+        padding: 20px;
+        border-radius: 5px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: none;
+    }
+
+    button[type="submit"] {
+        background-color: blue;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button[type="button"] {
+        background-color:lavender;
+    }
+</style>
+
+<script>
+    $(document).ready(()=> {
+        $("#mybtn").click(() => {
+            $.post('http://localhost:8086/rest/authenticate',{username:$("input[name=username]").val(),password:$("input[name=password]").val()},
+                function(response){
+                    if(response == "Success"){
+                        window.location.href="http://localhost:8086/web/dash";
+                    }
+                    else {
+                        alert(response)
+                    }
+                });
+        });
+    });
+
+</script>
+</body>
+</html>
+
